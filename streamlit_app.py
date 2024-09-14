@@ -20,7 +20,7 @@ def store_details():
     st.header(f'Employee: {store_name}')
     st.write('### Employee Details')
     st.write(f"Code: {store_data['code']}")
-     st.write(f"Basic: {store_data['basic']}")
+    st.write(f"Basic: {store_data['basic']}")
 
  
    
