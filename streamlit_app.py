@@ -31,19 +31,7 @@ st.write(f"Other Allowance: {store_data['OtherAllowance']}")
 st.write(f"GROSS SALARY: {store_data['GROSSSALARY']}")
 st.write(f"Total CTC: {store_data['TotalCTC']}")
 
-    # Pie chart for Employee Basic / GROSS SALARY
-    st.write('### Employee SALARY')
-    labels = ['Basic', 'GROSSSALARY']
-    sizes = [store_data['Basic'], store_data['GROSSSALARY']]
-    colors = ['#ff9999', '#66b3ff']
-    explode = (0.1, 0)  # explode the 1st slice
-
-    fig1, ax1 = plt.subplots()
-    ax1.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%',
-            shadow=True, startangle=90)
-    ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-
-    st.pyplot(fig1)
+  
 
 # Create a navigation menu
 st.sidebar.title('Navigation')
