@@ -66,7 +66,6 @@ def summary_statistics():
     st.write('### All Employee Summary')
     # Include all the requested columns in the summary
     summary = df[['name', 'code', 'esicno', 'basic', 'hra', 'tpt', 'edu', 'medical','otherallowance', 'grosssalary','totalctc']].rename(columns=custom_headers)
-    #name	code	esicno	uanno	basic	hra	tpt	edu	medical	otherallowance	grosssalary	totalctc
     # Display the DataFrame in the app
     st.dataframe(summary)  
 
@@ -87,14 +86,14 @@ def store_comparison():
     }
     st.sidebar.header('Select Employee to Compare')
     selected_stores = st.sidebar.multiselect('Employee Names', df['name'].unique())
-   #name	code	esicno	uanno	basic	hra	tpt	edu	medical	otherallowance	grosssalary	totalctc
+   
     if len(selected_stores) > 1:
         st.header('Store Comparison')
         st.write('### Comparison of Selected Empolyees')
 
         store_data_list = []
         for store_name in selected_stores:
-            store_data.index = store_data.index.to_series().replace(custom_headers)
+            #store_data.index = store_data.index.to_series().replace(custom_headers)
             store_data = df[df['name'] == store_name].T
             store_data.columns = [store_name]
             store_data_list.append(store_data)
