@@ -26,7 +26,7 @@ def store_details():
 
  #st.write(f"ESIC NO: {store_data['ESICNO']}")
  #st.write(f"UAN NO.: {store_data['UANNO']}")
- st.write(f"Basic: {store_data['Basic']}")
+ #st.write(f"Basic: {store_data['Basic']}")
  #st.write(f"HRA: {store_data['HRA']}")
  #st.write(f"TpT: {store_data['TpT']}")
  #st.write(f"Edu: {store_data['Edu']}")
