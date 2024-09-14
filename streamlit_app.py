@@ -55,6 +55,29 @@ def summary_statistics():
     # Display the DataFrame in the app
     st.dataframe(summary)  
 
+def store_comparison():
+    st.sidebar.header('Select Employee to Compare')
+    selected_stores = st.sidebar.multiselect('Employee Names', df['name'].unique())
+   #name	code	esicno	uanno	basic	hra	tpt	edu	medical	otherallowance	grosssalary	totalctc
+    if len(selected_stores) > 1:
+        st.header('Store Comparison')
+        st.write('### Comparison of Selected Empolyees')
+
+        store_data_list = []
+        for store_name in selected_stores:
+            store_data = df[df['name'] == store_name].T
+            store_data.columns = [store_name]
+            store_data_list.append(store_data)
+
+        # Display the stores' data side by side
+        for i, store_data in enumerate(store_data_list):
+            if i == 0:
+                comparison_df = store_data
+            else:
+                comparison_df = pd.concat([comparison_df, store_data], axis=1)
+
+        st.dataframe(comparison_df)
+        
 # Create a navigation menu
 st.sidebar.title('Navigation')
 page = st.sidebar.radio('Go to', ['Employee Details', 'Employee Statistics', 'Employee Comparison'])
