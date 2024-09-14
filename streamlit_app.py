@@ -3,25 +3,24 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load the Excel file
-df = pd.read_excel('VG-Revised-Data.xlsx')
+df = pd.read_excel('VG-Revised-Data-001.xlsx')
 
 # Format Store IDs (name in your case) to avoid comma separation
-df['Name'] = df['Name'].astype(str)
+df['name'] = df['name'].astype(str)
 
 # Define pages
 def store_details():
     st.sidebar.header('Select Employee Name')
-    store_name = st.sidebar.selectbox('Employee Name', df['Name'].unique())
+    store_name = st.sidebar.selectbox('Employee Name', df['name'].unique())
 
     # Filter data for the selected store
-    store_data = df[df['Name'] == store_name].iloc[0]
+    store_data = df[df['name'] == store_name].iloc[0]
 
     # Display store attributes
     st.header(f'Employee: {store_name}')
     st.write('### Employee Details')
-    st.write(f"Basic: {store_data['Basic']}")
-     st.write(f"Basic: {store_data['Basic']}")
-     #st.write(f"Code:  {store_data['Code']}")
+    st.write(f"Code: {store_data['code']}")
+    
 
  
    
