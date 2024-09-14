@@ -19,8 +19,9 @@ def store_details():
     # Display store attributes
     st.header(f'Employee: {store_name}')
     st.write('### Employee Details')
+    st.write(f"Code:  {store_data['Code']}")
     st.write(f"Total CTC:  {store_data['TotalCTC']}")
-    #st.write(f"Code:  {store_data['Code']}")
+   
    # st.write(f"Code:  {store_data['Code']}")
     # st.write(f"Code:  {store_data['Code']}")
  #st.write(f"Code:  {store_data['Code']}")
