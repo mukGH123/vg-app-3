@@ -20,9 +20,20 @@ def store_details():
     st.header(f'Employee: {store_name}')
     st.write('### Employee Details')
     st.write(f"Code: {store_data['code']}")
+    st.write(f"Basic: {store_data['esicno']}")
+    st.write(f"Code: {store_data['uanno']}")
     st.write(f"Basic: {store_data['basic']}")
+    st.write(f"HRA: {store_data['hra']}")
+    st.write(f"TPT: {store_data['tpt']}")
+    st.write(f"Edu: {store_data['edu']}")
+    st.write(f"Medical: {store_data['medical']}")
+    st.write(f"Other Allowance: {store_data['otherallowance']}")
+    st.write(f"Gross Salary: {store_data['grosssalary']}")
+    st.write(f"Total CTC: {store_data['totalctc']}")
+   
 
- 
+
+
    
    # st.write(f"Code:  {store_data['Code']}")
     # st.write(f"Code:  {store_data['Code']}")
