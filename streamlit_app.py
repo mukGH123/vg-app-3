@@ -71,6 +71,20 @@ def summary_statistics():
     st.dataframe(summary)  
 
 def store_comparison():
+    # Define custom headers for the DataFrame
+    custom_headers = {
+        'name': 'Employee Name',
+        'code': 'Employee Code',
+        'esicno': 'ESIC Number',
+        'basic': 'Basic Salary',
+        'hra': 'HRA',
+        'tpt': 'Transport Allowance',
+        'edu': 'Education Allowance',
+        'medical': 'Medical Allowance',
+        'otherallowance': 'Other Allowance',
+        'grosssalary': 'Gross Salary',
+        'totalctc': 'Total CTC'
+    }
     st.sidebar.header('Select Employee to Compare')
     selected_stores = st.sidebar.multiselect('Employee Names', df['name'].unique())
    #name	code	esicno	uanno	basic	hra	tpt	edu	medical	otherallowance	grosssalary	totalctc
@@ -80,6 +94,7 @@ def store_comparison():
 
         store_data_list = []
         for store_name in selected_stores:
+            store_data.index = store_data.index.to_series().replace(custom_headers)
             store_data = df[df['name'] == store_name].T
             store_data.columns = [store_name]
             store_data_list.append(store_data)
