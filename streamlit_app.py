@@ -19,17 +19,9 @@ def store_details():
     # Display store attributes
     st.header(f'Employee: {store_name}')
     st.write('### Employee Details')
-    st.write(f"Code:  ${store_data['Code']}")
-    st.write(f"ESIC NO: ${store_data['ESIC NO']}")
-st.write(f"UAN NO.: ${store_data['UAN NO.']}")
-st.write(f"Basic: ${store_data['Basic']}")
-st.write(f"HRA: ${store_data['HRA']}")
-st.write(f"TpT: ${store_data['TpT']}")
-st.write(f"Edu: ${store_data['Edu']}")
-st.write(f"Medical: ${store_data['Medical']}")
-st.write(f"Other Allowance: ${store_data['Other Allowance']}")
-st.write(f"GROSS SALARY: ${store_data['GROSS SALARY']}")
-st.write(f"Total CTC: ${store_data['Total CTC']}")
+    st.write(f"Code:  {store_data['Code']}")
+    st.write(f"ESIC NO: {store_data['ESIC NO']}")
+    st.write(f"UAN NO.: {store_data['UAN NO.']}")
 
 
    
