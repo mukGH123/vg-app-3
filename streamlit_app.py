@@ -46,11 +46,26 @@ def store_details():
     st.pyplot(fig1)
 
 def summary_statistics():
+    # Define custom headers for the DataFrame
+    custom_headers = {
+        'name': 'Employee Name',
+        'code': 'Employee Code',
+        'esicno': 'ESIC Number',
+        'basic': 'Basic Salary',
+        'hra': 'HRA',
+        'tpt': 'Transport Allowance',
+        'edu': 'Education Allowance',
+        'medical': 'Medical Allowance',
+        'otherallowance': 'Other Allowance',
+        'grosssalary': 'Gross Salary',
+        'totalctc': 'Total CTC'
+    }
+
     st.header('Employee Statistics')
 
     st.write('### All Employee Summary')
     # Include all the requested columns in the summary
-    summary = df[['name', 'code', 'esicno', 'basic', 'hra', 'tpt', 'edu', 'medical','otherallowance', 'grosssalary','totalctc']]
+    summary = df[['name', 'code', 'esicno', 'basic', 'hra', 'tpt', 'edu', 'medical','otherallowance', 'grosssalary','totalctc']].rename(columns=custom_headers)
     #name	code	esicno	uanno	basic	hra	tpt	edu	medical	otherallowance	grosssalary	totalctc
     # Display the DataFrame in the app
     st.dataframe(summary)  
