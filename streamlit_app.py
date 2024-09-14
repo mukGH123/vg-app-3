@@ -99,4 +99,4 @@ if page == 'Employee Details':
 elif page == 'Employee Statistics':
     summary_statistics()
 elif page == 'Employee Comparison':
-    store_details()
+    store_comparison()
