@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load the Excel file
-df = pd.read_excel('Revised-Data 25-08-24.xlsx')
+df = pd.read_excel('Revised-Data.xlsx')
 
 # Format Store IDs (name in your case) to avoid comma separation
 df['Name'] = df['Name'].astype(str)
