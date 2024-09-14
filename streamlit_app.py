@@ -45,7 +45,15 @@ def store_details():
 
     st.pyplot(fig1)
 
-  
+def summary_statistics():
+    st.header('Employee Statistics')
+
+    st.write('### All Employee Summary')
+    # Include all the requested columns in the summary
+    summary = df[['name', 'code', 'esicno', 'basic', 'hra', 'tpt', 'edu', 'medical','otherallowance', 'grosssalary','totalctc']]
+    #name	code	esicno	uanno	basic	hra	tpt	edu	medical	otherallowance	grosssalary	totalctc
+    # Display the DataFrame in the app
+    st.dataframe(summary)  
 
 # Create a navigation menu
 st.sidebar.title('Navigation')
@@ -66,6 +74,6 @@ st.markdown(
 if page == 'Employee Details':
     store_details()
 elif page == 'Employee Statistics':
-    store_details()
+    summary_statistics()
 elif page == 'Employee Comparison':
     store_details()
