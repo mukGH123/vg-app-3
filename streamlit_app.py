@@ -27,6 +27,9 @@ st.write(f"HRA: {store_data['HRA']}")
 st.write(f"TpT: {store_data['TpT']}")
 st.write(f"Edu: {store_data['Edu']}")
 st.write(f"Medical: {store_data['Medical']}")
+st.write(f"Other Allowance: {store_data['OtherAllowance']}")
+st.write(f"GROSS SALARY: {store_data['GROSSSALARY']}")
+st.write(f"Total CTC: {store_data['TotalCTC']}")
 
     # Pie chart for Employee Basic / GROSS SALARY
     st.write('### Employee SALARY')
