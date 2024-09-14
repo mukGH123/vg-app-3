@@ -31,25 +31,19 @@ def store_details():
     st.write(f"Gross Salary: {store_data['grosssalary']}")
     st.write(f"Total CTC: {store_data['totalctc']}")
    
+    # Pie chart for Male/Female Population
+    st.write('### Employee Salary')
+    labels = ['Gross Salary', 'Total CTC']
+    sizes = [store_data['grosssalary'], store_data['totalctc']]
+    colors = ['#ff9999', '#66b3ff']
+    explode = (0.1, 0)  # explode the 1st slice
 
+    fig1, ax1 = plt.subplots()
+    ax1.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%',
+            shadow=True, startangle=90)
+    ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
-
-   
-   # st.write(f"Code:  {store_data['Code']}")
-    # st.write(f"Code:  {store_data['Code']}")
- #st.write(f"Code:  {store_data['Code']}")
- #st.write(f"Code:  {store_data['Code']}")
-
- #st.write(f"ESIC NO: {store_data['ESICNO']}")
- #st.write(f"UAN NO.: {store_data['UANNO']}")
- #st.write(f"Basic: {store_data['Basic']}")
- #st.write(f"HRA: {store_data['HRA']}")
- #st.write(f"TpT: {store_data['TpT']}")
- #st.write(f"Edu: {store_data['Edu']}")
- #st.write(f"Medical: {store_data['Medical']}")
- #st.write(f"Other Allowance: {store_data['OtherAllowance']}")
- #st.write(f"GROSS SALARY: {store_data['GROSSSALARY']}")
- #st.write(f"Total CTC: {store_data['TotalCTC']}")
+    st.pyplot(fig1)
 
   
 
