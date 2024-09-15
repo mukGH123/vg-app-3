@@ -6,13 +6,28 @@ import pyodbc
 # Function to connect to SQL Server and fetch data
 def get_data_from_sql():
 	conn = pyodbc.connect(
-		'DRIVER={SQL Server};'
+		'DRIVER={ODBC Driver 17 for SQL Server};'
 		'SERVER=202.66.174.120,1232;'
 		'DATABASE=vaagmndb;'
 		'UID=vaagdadbusr;'
 		'PWD=MefrAyu!Uw8they9ru;'
 	)
-	
+	'''server = 'yourusername'
+username = 'yourusername'
+password = 'yourforgottencomplicatedpassword'
+database = 'yourdatabase'
+
+connStr = (r'DRIVER={ODBC Driver 17 for SQL Server};' +
+           r"Integrated Security=True;" +
+           r'SERVER=' + server +
+           r';UID=' + username +
+           r';PWD=' + password +
+           r';DSN=MSSQL-PYTHON' +
+           r';DATABASE=' + database + ';'
+           )
+
+print("Your Connection String:\n" + str(connStr) + "\n\n")
+'''
 	query = "SELECT Employee_Name, Employee_Code, Employee_Gender, Employee_DOB, GrossSalary FROM EmployeeMater"
 	df = pd.read_sql(query, conn)
 	conn.close()
